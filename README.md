@@ -7,7 +7,7 @@ Support au rapport du PFE
   + `/src/models/sinTube.ipynb` pour le sinusoïde perturbé
   + `/src/models/rotTube.ipynb` pour une application sur des données de vol
 
-+ `/src/visualisation`
-  + `/src/visualisation/visCos.im`
-  + `/src/visualisation`
-  + `/src/visualisation`
++ `/src/visualisation` trois visualisations des distributions des paramètres
+  + `/src/visualisation/visCos.ipynb`
+  + `/src/visualisation/visSin.ipynb`
+  + `/src/visualisation/visRot.ipynb`
