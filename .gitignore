@@ -1,0 +1,8 @@
+/.venv
+/data
+/logs
+/reports
+/project
+/models
+folder_structure_python.bat
+create_venv.ps1
