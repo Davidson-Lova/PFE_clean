@@ -13,7 +13,7 @@ class resLin(nn.Module) :
         self.Layer1 = nn.Linear(nin,nout)
         
     def forward(self, tX) :
-        x = self.Layesr1(tX)
+        x = self.Layer1(tX)
         return x
     
     def zero_grad(self, set_to_none: bool = False) -> None:
