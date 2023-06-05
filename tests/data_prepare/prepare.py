@@ -2,7 +2,8 @@
 import dask.dataframe as dd
 import pandas as pd
 import matplotlib.pyplot as plt
-
+import numpy as np
+import random
 
 # %%
 file_name = "../../data/raw/Aircraft_01.h5"
@@ -45,3 +46,25 @@ covariable_name = ["N1_1 [% rpm]",
 
 # %% 
 plt.plot(df.partitions[162][target_name].compute())
+
+# %%
+threshold = 5000
+indexes =  np.arange(len(nbLines))[np.array(nbLines) <= threshold]
+
+# %%
+# for index in indexes :
+#     plt.figure()
+#     plt.plot(df.partitions[index][target_name].compute().values)
+#     plt.savefig('images/N2_{}.png'.format(index), bbox_inches='tight')
+
+
+
+# %% 
+indexesTrain = random.sample(list(indexes), 10)
+
+
+# %%
+f = open("../../data/processed/trainingSample.txt", "w")
+for index in indexesTrain :
+    f.write("{}\n".format(index))
+f.close()
