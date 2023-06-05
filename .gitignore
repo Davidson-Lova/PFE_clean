@@ -9,3 +9,4 @@
 /src/data_prepare/rotParams
 folder_structure_python.bat
 create_venv.ps1
+/tests/data_prepare/images/
