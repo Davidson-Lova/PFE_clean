@@ -151,7 +151,8 @@ def trainBNN(args, tX, ty, myModel) :
             logPriorSeeds = [
                 [priorDist.log_prob(p) for p in theta] for theta in thetasSeeds]
 
-            rj = [[torch.exp(- (p1 - p2)) for (p1, p2) in zip(l1, l2)]
+            # evaluating acceptance probability
+            rj = [[torch.exp(- (p1 - p2) / TempCur) for (p1, p2) in zip(l1, l2)]
                 for (l1, l2) in zip(logPriorResamples, logPriorSeeds)]
 
             sj = [[(torch.minimum(t, torch.ones(t.shape)))
