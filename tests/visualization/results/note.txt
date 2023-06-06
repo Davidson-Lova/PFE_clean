@@ -1,0 +1,13 @@
+Training flights
+946
+973
+881
+714
+925
+892
+
+Testing flights
+880
+924
+679
+
