@@ -39,7 +39,7 @@ covariable_name = ["N1_1 [% rpm]",
 # %%
 # Hypperparamètres
 N = 5000
-lmax = 8
+lmax = 6
 P0 = 0.1
 epsilon = 0.01
 fact = 0.5
@@ -48,7 +48,7 @@ sigma_0 = (lmax + 1) * fact
 ns = [4, 2, 1]
 
 # Temperature initiale
-Temp = 10
+Temp = 30
 
 # Distance qui va être utiliser pour évaluer
 # la dissimilarité entre les prédictions y_hat et la réponse y
@@ -68,10 +68,10 @@ dataIndices = f.read().split('\n')
 f.close()
 
 # %%
-dataIndices = [int(index) for index in dataIndices[:-1]]
+dataIndices = [int(index) for index in dataIndices]
 
 # %%
-trainingIndices = random.sample(dataIndices, int(len(dataIndices) * 0.7))
+trainingIndices = random.sample(dataIndices, 7)
 testingIndices = list(set(dataIndices) - set(trainingIndices))
 
 
@@ -228,3 +228,5 @@ for indexPartition in testingIndices :
     plt.legend()
     plt.show()
 
+
+# %%
