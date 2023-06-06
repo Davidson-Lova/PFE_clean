@@ -10,3 +10,4 @@
 folder_structure_python.bat
 create_venv.ps1
 /tests/data_prepare/images/
+.pyc
