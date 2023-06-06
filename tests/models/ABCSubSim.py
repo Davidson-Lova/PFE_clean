@@ -85,7 +85,7 @@ def trainBNN(args, tX, ty, myModel) :
 
     """
     
-    nw = modelSize(args["ns"])
+    ny = ty.shape[0]
 
     # distribution a priori
     priorDist = torch.distributions.Normal(0, args["sigma_0"])
@@ -99,7 +99,7 @@ def trainBNN(args, tX, ty, myModel) :
         tuple([myModel.set_params(theta).forward(tX) for theta in thetas]), 1)
 
     # Calcul la dissimilarité
-    rhos = (torch.cdist(tYs.t(), ty.t(), p=args["pdist"]) ** 2) / nw
+    rhos = (torch.cdist(tYs.t(), ty.t(), p=args["pdist"]) ** 2) / ny
 
     #
     rhoMin = []
@@ -166,7 +166,7 @@ def trainBNN(args, tX, ty, myModel) :
 
             tYsNow = torch.concatenate(
                 tuple([myModel.set_params(theta).forward(tX) for theta in thetasNow]), 1)
-            rhoNow = (torch.cdist(tYsNow.t(), ty.t(), p=args["pdist"]) ** 2) / nw
+            rhoNow = (torch.cdist(tYsNow.t(), ty.t(), p=args["pdist"]) ** 2) / ny
 
             thetasVal = [(tNow) if (rhoN <= epsilon_j) else (tSeed)
                         for (tSeed, tNow, rhoN) in zip(thetasSeeds, thetasNow, rhoNow)]
