@@ -46,7 +46,7 @@ sigma_0 = (lmax + 1) * fact
 ns = [4,1]
 
 # Temperature initiale
-Temp = 10
+Temp = 1
 
 # Distance qui va être utiliser pour évaluer
 # la dissimilarité entre les prédictions y_hat et la réponse y
@@ -245,4 +245,24 @@ for indexPartition in testingIndices :
 
 
 # %%
+import time
 
+# %%
+nbTime = 20
+times = []
+for i in range(nbTime) :
+    tic = time.time()
+    _,_,_,_ = ABCSubSim.trainBNN(args, tX, ty, model)
+    times.append(time.time() - tic)
+
+
+
+# %%
+plt.boxplot(times)
+plt.grid("on")
+
+# %%
+print("the number of parameters to be estimated :",ABCSubSim.modelSize(ns))
+
+# %%
+print("tXtrain.shape :",tXTrain.shape)

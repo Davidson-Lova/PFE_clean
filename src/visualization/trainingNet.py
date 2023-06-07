@@ -247,5 +247,29 @@ for indexPartition in testingIndices :
     plt.show()
 
 
+# %%
+import time
 
 # %%
+nbTime = 20
+times = []
+for i in range(nbTime) :
+    tic = time.time()
+    _,_,_,_ = ABCSubSim.trainBNN(args, tX, ty, model)
+    times.append(time.time() - tic)
+
+
+# %%
+plt.boxplot(times)
+plt.grid("on")
+
+# %%
+plt.boxplot(times)
+plt.grid("on")
+plt.ylim(15, 30)
+
+# %%
+print("the number of parameters to be estimated :",ABCSubSim.modelSize(ns))
+
+# %%
+print("tXtrain.shape :",tXTrain.shape)
