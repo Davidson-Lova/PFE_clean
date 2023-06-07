@@ -22,8 +22,6 @@ from models import ABCSubSim
 
 
 # %%
-
-# %%
 file_name = "../../data/raw/Aircraft_01_dask.h5"
 df = dd.read_hdf(file_name, '*')
 
