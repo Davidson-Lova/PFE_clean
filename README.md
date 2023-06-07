@@ -16,3 +16,9 @@ Support au rapport du PFE
     On entraine un modèle linéaire sur 7 vols et on test le modèle entrainé sur 3 vols
   + `/src/visualisation/trainingNet.ipynb`
     On entraine un réseau de neurones à une couche cachée sur 7 vols et on test le modèle entrainé sur 3 vols
+
+<!-- Processeur	12th Gen Intel(R) Core(TM) i7-12800H   2.40 GHz
+
+Mémoire RAM installée	32,0 Go (31,7 Go utilisable)
+
+Type du système	Système d’exploitation 64 bits, processeur x64 -->
